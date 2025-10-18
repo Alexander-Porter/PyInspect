@@ -24,6 +24,12 @@ PyInspect allows you to remotely and non-intrusively interact with a live Python
   * **🖥️ Remote REPL:**
       * Simulate a Python interpreter (REPL) within the context of the running application for arbitrary code execution.
 
+## How to use
+1. Place all files in a folder.
+2. Try to get target's pointers of `PyRun_SimpleString` , `PyGILState_Ensure` and `PyGILState_Release`
+3. Import `server.py` and then run `start_server_and_patch` using `PyRun_SimpleString`. You need a `tick` function to be hooked in target, otherwise you may setup a thread to run this toolkit, which is suspicious to (potential) anti-cheat service.
+4. Open `127.0.0.1:8888`, you will see the backend api is running.
+
 ## Contributing
 
 Contributions are welcome\! Please open an issue or submit a pull request.
